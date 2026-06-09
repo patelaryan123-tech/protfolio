@@ -6,7 +6,7 @@ import { Points, PointMaterial, Preload } from '@react-three/drei';
 import CanvasLoader from '../ui/Loader';
 // @ts-ignore
 const Stars = (props: any) => {
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   const [sphere] = useState(() => {
     const arr = new Float32Array(6000);
     for (let i = 0; i < 6000; i++) {
