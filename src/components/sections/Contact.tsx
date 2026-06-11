@@ -79,12 +79,12 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
         {/* Left Side: Contact Info */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+           initial={{ opacity: 0, x: -50 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           transition={{ duration: 0.8 }}
         >
           <p className="text-neon-purple font-bold uppercase tracking-[4px] text-[14px]">Let's Connect</p>
           <h2 className="text-white font-black md:text-[54px] sm:text-[44px] text-[34px] leading-tight mt-2 mb-10">
@@ -136,7 +136,7 @@ const Contact = () => {
            initial={{ opacity: 0, x: 50 }}
            whileInView={{ opacity: 1, x: 0 }}
            transition={{ duration: 0.8 }}
-           className="bg-slate-950/20 border border-slate-800/50 p-10 rounded-[40px] glassmorphism relative overflow-hidden"
+           className="bg-slate-950/20 border border-slate-800/50 p-6 sm:p-10 rounded-[30px] sm:rounded-[40px] glassmorphism relative overflow-hidden"
         >
            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

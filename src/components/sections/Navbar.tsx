@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { navLinks } from '@/constants';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { cn } from '@/utils/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -54,6 +54,7 @@ const Navbar = () => {
           </div>
         </Link>
 
+        {/* Desktop Navigation */}
         <div className="hidden lg:flex flex-row items-center gap-8">
           <ul className="list-none flex flex-row gap-6">
             {navLinks.map((link) => (
@@ -88,18 +89,22 @@ const Navbar = () => {
              
              <a 
                href="/Aryan_Patel_Resume.html"
+               target="_blank"
                download="Aryan_Patel_Resume.html"
-               className="bg-[#0f172a] border border-slate-700 hover:border-neon-purple text-white px-5 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all shadow-lg"
+               className="bg-[#0f172a] border border-slate-700 hover:border-neon-purple text-white px-5 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all shadow-lg active:scale-95"
              >
                 Download Resume
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <Download className="w-4 h-4 ml-1" />
              </a>
           </div>
         </div>
 
+        {/* Mobile Navigation */}
         <div className="lg:hidden flex flex-1 justify-end items-center gap-4">
-          <button className="bg-slate-900 border border-slate-700 p-2 rounded-lg">
-             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <button className="bg-slate-900 border border-slate-700 p-2 rounded-lg active:scale-95">
+             <a href="/Aryan_Patel_Resume.html" download="Aryan_Patel_Resume.html" className="flex items-center justify-center">
+                <Download className="w-5 h-5 text-white" />
+             </a>
           </button>
 
           <div onClick={() => setToggle(!toggle)} className="cursor-pointer">
@@ -112,14 +117,14 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
-                className="p-6 absolute top-20 right-0 mx-4 my-2 min-w-[200px] z-[200] rounded-2xl glassmorphism bg-slate-950/95 flex-col gap-4 flex border border-slate-800"
+                className="p-6 absolute top-20 right-0 mx-4 my-2 min-w-[240px] z-[200] rounded-2xl glassmorphism bg-slate-950/95 flex-col gap-4 flex border border-slate-800 shadow-2xl"
               >
-                <ul className="list-none flex justify-end items-start flex-col gap-4">
+                <ul className="list-none flex justify-end items-start flex-col gap-5 w-full">
                   {navLinks.map((link) => (
                     <li
                       key={link.name}
                       className={cn(
-                        "font-medium cursor-pointer text-[18px]",
+                        "font-medium cursor-pointer text-[18px] w-full",
                         active === link.name ? 'text-neon-purple' : 'text-slate-300'
                       )}
                       onClick={() => {
@@ -127,10 +132,24 @@ const Navbar = () => {
                         setActive(link.name);
                       }}
                     >
-                      <a href={link.href}>{link.name}</a>
+                      <a href={link.href} className="block w-full">{link.name}</a>
                     </li>
                   ))}
-                  <li className="pt-4 border-t border-slate-800 w-full flex items-center justify-between">
+                  
+                  <li className="pt-4 border-t border-slate-800 w-full">
+                     <a 
+                       href="/Aryan_Patel_Resume.html" 
+                       target="_blank"
+                       download="Aryan_Patel_Resume.html"
+                       className="w-full flex items-center justify-center gap-3 bg-neon-purple py-3 rounded-xl text-white font-bold text-[16px] active:scale-95 transition-all shadow-[0_0_15px_rgba(145,94,255,0.4)]"
+                       onClick={() => setToggle(false)}
+                     >
+                       <Download className="w-5 h-5" />
+                       Download Resume
+                     </a>
+                  </li>
+
+                  <li className="pt-2 w-full flex items-center justify-between px-2">
                      <span className="text-slate-400 text-sm">Theme</span>
                      <div 
                         onClick={() => setIsDark(!isDark)}

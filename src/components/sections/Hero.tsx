@@ -26,7 +26,7 @@ const iconMap: any = {
 
 const Hero = () => {
   return (
-    <section id="home" className="relative w-full min-h-screen mx-auto overflow-hidden bg-primary flex items-center">
+    <section id="home" className="relative w-full min-h-screen mx-auto bg-primary flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(145,94,255,0.15),transparent_50%)] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 w-full flex flex-col lg:flex-row items-center justify-center gap-10 py-20 lg:py-0 pt-[100px] lg:pt-[80px]">
@@ -37,28 +37,28 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-secondary text-[18px] font-medium tracking-wider">Hi, I'm</p>
-            <h1 className="text-white font-black lg:text-[80px] sm:text-[60px] text-[40px] lg:leading-[98px] drop-shadow-[0_0_15px_rgba(145,94,255,0.5)] mt-2">
+            <p className="text-secondary text-[16px] sm:text-[18px] font-medium tracking-wider">Hi, I'm</p>
+            <h1 className="text-white font-black lg:text-[80px] sm:text-[60px] text-[36px] lg:leading-[98px] leading-tight drop-shadow-[0_0_15px_rgba(145,94,255,0.5)] mt-2">
               Aryan Patel
             </h1>
             <div className="mt-4 flex flex-col gap-1">
-               <p className="text-[#915eff] font-bold text-[24px] sm:text-[32px] tracking-tight">
+               <p className="text-[#915eff] font-bold text-[20px] sm:text-[32px] tracking-tight">
                  Software Engineer | <span className="text-white">Full Stack Developer</span>
                </p>
-               <p className="text-neon-blue font-bold text-[24px] sm:text-[32px] tracking-tight">
+               <p className="text-neon-blue font-bold text-[20px] sm:text-[32px] tracking-tight">
                  Machine Learning Engineer
                </p>
             </div>
-            <p className="mt-6 text-secondary text-[16px] max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="mt-6 text-secondary text-[14px] sm:text-[16px] max-w-xl mx-auto lg:mx-0 leading-relaxed opacity-80">
               I build intelligent, scalable, and user-centric applications with modern technologies and AI-powered solutions.
             </p>
 
-            <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-6">
+            <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6">
               <motion.a 
                 href="#projects"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(145,94,255,0.6)" }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-neon-purple to-[#7a49e0] py-4 px-10 rounded-xl text-white font-bold flex items-center gap-2 group transition-all"
+                className="bg-gradient-to-r from-neon-purple to-[#7a49e0] py-3.5 px-8 sm:px-10 rounded-xl text-white font-bold flex items-center gap-2 group transition-all text-sm sm:text-base shadow-xl"
               >
                 View My Work
                 <svg className="group-hover:translate-x-1 transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -68,7 +68,7 @@ const Hero = () => {
                 href="#contact"
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(145,94,255,0.05)" }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-slate-700 hover:border-neon-purple py-4 px-10 rounded-xl text-white font-bold flex items-center gap-2 transition-all"
+                className="border-2 border-slate-700 hover:border-neon-purple py-3.5 px-8 sm:px-10 rounded-xl text-white font-bold flex items-center gap-2 transition-all text-sm sm:text-base"
               >
                 Let's Connect
                 <Send className="w-5 h-5 group-hover:rotate-12 transition-transform" />
@@ -86,7 +86,7 @@ const Hero = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -5, borderColor: '#915eff', color: '#915eff' }}
-                    className="w-12 h-12 rounded-xl border border-slate-800 glassmorphism flex items-center justify-center text-slate-400 hover:shadow-[0_0_15px_rgba(145,94,255,0.2)] transition-all bg-slate-950/50"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl border border-slate-800 glassmorphism flex items-center justify-center text-slate-400 hover:shadow-[0_0_15px_rgba(145,94,255,0.2)] transition-all bg-slate-950/50"
                   >
                     <span className="sr-only">{social.name}</span>
                     <Icon className="w-5 h-5" />
@@ -98,7 +98,7 @@ const Hero = () => {
         </div>
 
         {/* Right Content - 3D Laptop */}
-        <div className="flex-1 w-full h-[350px] sm:h-[450px] lg:h-[600px] z-0 relative">
+        <div className="flex-1 w-full h-[300px] sm:h-[450px] lg:h-[600px] z-0 relative">
            <HeroCanvas />
         </div>
       </div>
